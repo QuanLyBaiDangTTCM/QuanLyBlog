@@ -12,9 +12,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">
-            <h1>F5</h1>
+    <nav class="navbar navbar-expand-lg navbar-light navbar navbar-dark bg-primary mb-4">
+        <a class="navbar-brand" href="/home">
+            <h1 style="font-family:Georgia, 'Times New Roman', Times, serif;">F5</h1>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link active" aria-current="page" href="/home">Trang Chủ <span class="sr-only">(current)</span></a>
+                    <a class="nav-link active" aria-current="page" href="/home">Trang Chủ </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/home/tin_tuc">Tin Tức</a>
@@ -41,9 +41,9 @@
                     <a class="nav-link" href="/form-login" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
                 </li>
                 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="/posts">Admin</a>
-                </li>
+                </li> -->
                 
                 <li class="nav-item">
                     <a class="nav-link" href="/form-login">Login</a>

@@ -30,7 +30,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link" href="/home">Trang Chủ <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/home">Trang Chủ </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="/posts">Quản Lý Bài Đăng</a>

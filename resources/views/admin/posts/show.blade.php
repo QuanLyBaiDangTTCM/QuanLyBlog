@@ -14,28 +14,37 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#">
-            <h1>Admin</h1>
+            <h1>F5</h1>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/home">Trang Chủ <span class="sr-only">(current)</span></a>
+                <li class="nav-item ">
+                    <a class="nav-link active" aria-current="page" href="/home">Trang Chủ </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/posts">Quản Lý Bài Đăng</a>
+                    <a class="nav-link" href="/home/tin_tuc">Tin Tức</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/users">Quản Lý Người Dùng</a>
+                    <a class="nav-link" href="/home/the_thao">Thể Thao</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/comments">Quản Lý Đánh Giá</a>
+                    <a class="nav-link" href="/home/cong_nghe">Công Nghệ</a>
                 </li>
+                
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
                 <li class="nav-item">
-                    <a class="nav-link" href="/categories">Quản lý Thư Mục</a>
+                    <a class="nav-link" href="/form-login" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
                 </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/form-login">Login</a>
+                </li>
+
             </ul>
         </div>
     </nav>
@@ -55,7 +64,7 @@
 
         <!-- Author -->
         <p class="lead">
-            by <a href="#">Start Bootstrap</a>
+            <h6>By {{$post->author}}</h6>
         </p>
 
         <hr>
