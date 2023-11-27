@@ -40,10 +40,10 @@
                     <a class="nav-link" href="/home/cong_nghe">Công Nghệ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/form-register">Register</a>
+                    <a class="nav-link" href="/form-register">Đăng ký</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/form-login">Login</a>
+                    <a class="nav-link active" href="/form-login">Đăng nhập</a>
                 </li>
 
             </ul>
@@ -73,12 +73,12 @@
         <!-- <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button> -->
         <!-- <a href="{{ route('form_register') }}" class="btn btn-primary">Register</a> -->
         <div class="col d-flex justify-content-center">
-            <button type="submit" class=" btn btn-primary ">Log in</button>
+            <button type="submit" class=" btn btn-primary ">Đăng nhập</button>
         </div>
 
         <!-- Register buttons -->
         <div class="text-center">
-        <p>Bạn chưa có tài khoản? <a href="{{ route('form_register') }}">Register</a></p>
+        <p>Bạn chưa có tài khoản? <a href="{{ route('form_register') }}">Đăng ký</a></p>
             
         </div>
     </form>

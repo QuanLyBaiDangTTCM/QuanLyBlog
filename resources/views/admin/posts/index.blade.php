@@ -34,7 +34,12 @@
             </ul>
         </div>
     </nav>
-  <a href="{{ route('create.posts') }}">Create Posts</a>
+    
+      <button class="btn btn-info">
+        
+      <a style="color: white;" href="{{ route('create.posts') }}">Create Posts</a>
+      </button>
+    
 <table class="table">
   <thead>
     <tr>
@@ -43,6 +48,7 @@
       <th scope="col">Description</th>
       <th scope="col">Author</th>
       <th scope="col">Category ID</th>
+      <th scope="col">Image</th>
       <th scope="col">Action</th>
       <th scope="col">Action</th>
     </tr>
@@ -58,6 +64,7 @@
       <td>{{$post->description}}</td>
       <td>{{$post->author}}</td>
       <td>{{$post->category_id}}</td>
+      <td><img src="{{$post->image}}" alt="photo" style="height: 80px;"> </td>
       <td><a class="btn btn-primary" href="{{ route('edit.posts', $post->id) }}">Edit</a></td>
       <td>
         <!-- <a href="{{ route('delete.posts', $post->id) }}">Delete</a> -->

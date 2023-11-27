@@ -40,10 +40,10 @@
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link active" href="/form-register">Register</a>
+                    <a class="nav-link active" href="/form-register">Đăng ký</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/form-login">Login</a>
+                    <a class="nav-link" href="/form-login">Đăng nhập</a>
                 </li>
 
 

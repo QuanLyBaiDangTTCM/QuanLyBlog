@@ -38,7 +38,7 @@
                     @csrf
                 </form>
                 <li class="nav-item">
-                    <a class="nav-link" href="/form-login" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                    <a class="nav-link" href="/form-login" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Đăng xuất</a>
                 </li>
                 
                 <!-- <li class="nav-item">
@@ -46,7 +46,7 @@
                 </li> -->
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="/form-login">Login</a>
+                    <a class="nav-link" href="/form-login">Đăng nhập</a>
                 </li>
 
             </ul>
@@ -55,10 +55,10 @@
 
     <div class="container">
 
-        <div class="row">
+        <div class="row ">
 
             <!-- Blog Post Content Column -->
-            <div class="col-lg-9">
+            <div class="col-lg-12">
                 
                 <!-- Blog Post -->
                 @foreach($posts as $post)
@@ -70,13 +70,13 @@
 
                 <!-- Author -->
                 <p class="lead">
-                <h6>By {{$post->author}}</h6>
+                <h6>Tác giả {{$post->author}}</h6>
                 </p>
 
                 <hr>
 
                 <!-- Date/Time -->
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
+                <p><span class="glyphicon glyphicon-time"></span> {{$post->created_at}}</p>
 
                 <hr>
 
@@ -100,7 +100,7 @@
 
                 <!-- Comments Form -->
                 <div class="well">
-                    <h4>Leave a Comment:</h4>
+                    <h4>Viết đánh giá ngay:</h4>
                     <form role="form" action="{{route('insert.comments')}}" method="POST">
                         @csrf
                         <input type="hidden" value="{{$post->id}}" name="post_id">
@@ -119,7 +119,7 @@
                 <!-- Posted Comments -->
 
                 <!-- Comment -->
-                <h4>Comments</h4>
+                <h4>Đánh giá</h4>
                 @foreach($post->comments as $comment)
                 <div class="media border">
 
@@ -143,10 +143,10 @@
 
 
             <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-3">
+            <!-- <div class="col-md-3"> -->
 
                 <!-- Blog Search Well -->
-                <div class="well">
+                <!-- <div class="well">
                     <h4>Blog Search</h4>
                     <div class="input-group">
                         <input type="text" class="form-control">
@@ -155,9 +155,9 @@
                                 <span class="glyphicon glyphicon-search"></span>
                             </button>
                         </span>
-                    </div>
+                    </div> -->
                     <!-- /.input-group -->
-                </div>
+                <!-- </div> -->
 
                 <!-- Blog Categories Well -->
                 <!-- <div class="well">

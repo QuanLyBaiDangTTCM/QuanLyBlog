@@ -35,7 +35,9 @@
         </div>
     </nav>
   
-  <a href="{{ route('create.users') }}">Create Users</a>
+  <button class="btn btn-info">
+    <a style="color: white;" href="{{ route('create.users') }}">Create Users</a>
+  </button>
 <table class="table">
   <thead>
     <tr>

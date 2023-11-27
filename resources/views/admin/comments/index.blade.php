@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link" href="/home">Trang Chủ <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/home">Trang Chủ</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="/posts">Quản Lý Bài Đăng</a>
@@ -27,6 +27,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="/comments">Quản Lý Đánh Giá</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/categories">Quản Lý Thư Mục</a>
                 </li>
                 
             </ul>
@@ -38,7 +41,8 @@
       <th scope="col">Id </th>
       <th scope="col">Comment</th>
       <th scope="col">Email</th>
-      <th scope="col">Action</th>
+      <th scope="col">Post ID</th>
+      <!-- <th scope="col">Action</th> -->
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -50,7 +54,8 @@
       
       <td>{{$comment->comment}}</td>
       <td>{{$comment->email}}</td>
-      <td><a class="btn btn-primary" href="{{ route('edit.comments', $comment->id) }}">Edit</a></td>
+      <td>{{$comment->post_id}}</td>
+      <!-- <td><a class="btn btn-primary" href="{{ route('edit.comments', $comment->id) }}">Edit</a></td> -->
       <td>
        
       <a class="btn btn-danger" onclick="return confirm('Ban co muon xoa')" href="{{ route('delete.comments', $comment->id) }}">Delete</a>

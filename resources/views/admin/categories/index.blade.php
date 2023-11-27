@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link" href="/home">Trang Chủ <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/home">Trang Chủ </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/posts">Quản Lý Bài Đăng</a>
@@ -28,9 +28,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/comments">Quản Lý Đánh Giá</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/categories">Quản Lý Thư Mục</a>
-                </li>
+               
                 <li class="nav-item">
                     <a class="nav-link active" href="/categories">Quản lý Thư Mục</a>
                 </li>
@@ -38,7 +36,9 @@
         </div>
     </nav>
 
-<a href="{{ route('create.categories') }}">Create Category</a>
+<button class="btn btn-info">
+<a style="color: white;" href="{{ route('create.categories') }}">Create Category</a>
+</button>
 <table class="table">
   <thead>
     <tr>
