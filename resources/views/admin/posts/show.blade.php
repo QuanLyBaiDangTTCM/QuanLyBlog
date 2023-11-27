@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Document</title>
+  <link href="/cms/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <!-- <link href="/cms/css/blog-home.css" rel="stylesheet"> -->
+    <link href="app.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+            <h1>Admin</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/home">Trang Chủ <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/posts">Quản Lý Bài Đăng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users">Quản Lý Người Dùng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/comments">Quản Lý Đánh Giá</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/categories">Quản lý Thư Mục</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  
+  <div class="container">
+
+<div class="row">
+
+    <!-- Blog Post Content Column -->
+    <div class="col-lg-9">
+
+        <!-- Blog Post -->
+        
+
+        <!-- Title -->
+        <h1><a href="{{ route('show.posts', $post->id) }}">{{$post->title}}</a></h1>
+
+        <!-- Author -->
+        <p class="lead">
+            by <a href="#">Start Bootstrap</a>
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
+
+        <hr>
+
+        <!-- Preview Image -->
+        <!-- <img class="img-responsive" src="http://placehold.it/900x300" alt=""> -->
+
+        <img class="img-responsive" src="{{ asset($post->image) }}" alt="photo" style=" height: 300px">
+
+
+        <hr>
+
+        <!-- Post Content -->
+        <p>{{$post->description}}</p>
+        <!-- <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p> -->
+
+        <hr>
+
+        <!-- Blog Comments -->
+
+        <!-- Comments Form -->
+        <div class="well">
+            <h4>Leave a Comment:</h4>
+            <form role="form" action="{{route('insert.comments')}}" method="POST">
+                @csrf
+                <input type="hidden" value="{{$post->id}}" name="post_id">
+                <div class="form-group">
+                    <textarea class="form-control" rows="3" name="comment"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Enter email" name="email">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <!-- Posted Comments -->
+
+        <!-- Comment -->
+        @foreach($post->comments as $comment)
+        <div class="media">
+
+            <div class="media-body">
+                <h6 class="media-heading">
+                    {{$comment->comment}}
+                </h6>
+
+                <h5>{{$comment->email}}</h5>
+                <p>{{$comment->created_at}}</p>
+            </div>
+        </div>
+        @endforeach
+
+
+        
+
+    </div>
+
+
+    <!-- Blog Sidebar Widgets Column -->
+    <div class="col-md-3">
+
+        <!-- Blog Search Well -->
+        <div class="well">
+            <h4>Blog Search</h4>
+            <div class="input-group">
+                <input type="text" class="form-control">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+            <!-- /.input-group -->
+        </div>
+
+        <!-- Blog Categories Well -->
+        <!-- <div class="well">
+
+            <h4>Blog Categories</h4>
+             -->
+
+        <!--<h1></h1> -->
+        <!-- <div class="row">
+                <div class="col-lg-6">
+                    <ul class="list-unstyled">
+                        <li><a href="#"></a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+             -->
+        <!-- /.row -->
+        <!-- </div> -->
+
+        <!-- Side Widget Well -->
+        <!-- <div class="well">
+            <h4>Side Widget Well</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+        </div> -->
+        <div>
+
+        </div>
+
+
+    </div>
+
+</div>
+<!-- /.row -->
+
+<hr>
+
+<!-- Footer -->
+<footer>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Copyright &copy; Your Website 2014</p>
+        </div>
+    </div>
+    <!-- /.row -->
+</footer>
+
+</div>
+<footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
